@@ -11,7 +11,7 @@ public class GUI extends JFrame{
 
     private JLabel label;
 
-    private float num1, num2;
+    private double num1, num2;
     private char operation;
     private boolean result;
 
@@ -65,10 +65,10 @@ public class GUI extends JFrame{
                 label.setText(label.getText() + '.');
         });
 
-        percentage.addActionListener(e -> label.setText(String.valueOf(Float.parseFloat(label.getText())/100)));
+        percentage.addActionListener(e -> label.setText(String.valueOf(Double.parseDouble(label.getText())/100)));
 
         equal.addActionListener(e -> {
-            num2 = Float.parseFloat(label.getText());
+            num2 = Double.parseDouble(label.getText());
 
             if (operation == '+')
                 label.setText(result(num1+num2));
@@ -99,6 +99,9 @@ public class GUI extends JFrame{
     }
 
     private String addNumber (String string, String number){
+        if (string.length() >= 16)
+            return string;
+
         if (result){
             result = false;
             return number;
@@ -112,9 +115,12 @@ public class GUI extends JFrame{
         label.setText("0");
     }
 
-    private String result(float number){
+    private String result(double number){
         if (number % 1 == 0)
-            return String.valueOf(((int) number));
+            if (String.valueOf(number).length() > 16)
+                return String.valueOf(number);
+            else
+                return String.valueOf((long) number);
         else
             return String.valueOf(number);
     }
