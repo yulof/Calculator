@@ -1,35 +1,21 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GUI extends JFrame{
 
     private JPanel panel;
-    private JButton C;
-    private JButton sign;
-    private JButton percentage;
-    private JButton division;
-    private JButton one;
-    private JButton two;
-    private JButton three;
-    private JButton four;
-    private JButton five;
-    private JButton six;
-    private JButton seven;
-    private JButton eight;
-    private JButton nine;
-    private JButton multiplication;
-    private JButton subtract;
-    private JButton add;
-    private JButton decimal;
-    private JButton zero;
-    private JButton equal;
+
+    private JButton C, sign, percentage;
+    private JButton decimal, equal;
+    private JButton add, subtract, multiplication, division;
+    private JButton zero, one, two, three, four, five, six, seven, eight, nine;
+
     private JLabel label;
 
     private float num1, num2;
     private char operation;
+    private boolean result;
 
-    public GUI() {
+    private GUI() {
         super("Calculadora");
         setContentPane(panel);
 
@@ -53,7 +39,10 @@ public class GUI extends JFrame{
 
         nine.addActionListener(e -> numberButtonAction("9"));
 
-        C.addActionListener(e -> label.setText("0"));
+        C.addActionListener(e -> {
+            label.setText("0");
+            result = false;
+        });
 
         add.addActionListener(e -> operationButtonAction('+'));
 
@@ -91,18 +80,30 @@ public class GUI extends JFrame{
                 label.setText(result(num1*num2));
 
             if (operation == '/')
-                label.setText(result(num1/num2));
+                if(num2!=0)
+                    label.setText(result(num1/num2));
+                else
+                    label.setText("Error");
 
             operation = ' ';
+            result = true;
         });
 
     }
 
     private void numberButtonAction(String num){
         if(!label.getText().equals("0"))
-            label.setText(label.getText() + num);
+            label.setText(addNumber(label.getText(), num));
         else
             label.setText(num);
+    }
+
+    private String addNumber (String string, String number){
+        if (result){
+            result = false;
+            return number;
+        } else
+            return string + number;
     }
 
     private void operationButtonAction(char operation){
