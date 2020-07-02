@@ -8,10 +8,6 @@ public class Op {
         return Double.parseDouble(quitSpacing(string));
     }
 
-    public static String doubleToString(double number) {
-        return String.valueOf(number);
-    }
-
     public static String longToString(long number) {
         return String.valueOf(number);
     }
@@ -67,7 +63,7 @@ public class Op {
     }
 
     private static String quitAll(String string) {
-        return quitSpacing(string).replace(".", "");
+        return quitSpacing(string).replace(".", "").replace("-", "");
     }
 
     // Other operations
@@ -75,18 +71,11 @@ public class Op {
         return String.valueOf(number).contains("E");
     }
 
-    public static String addNumberToCurrent(String current, String number) {
-        if (numberOfDigits(current) >= 16)
-            return current;
-
-        return setSpacing(current.concat(number), false);
-    }
-
-    private static int numberOfDigits(String string) {
+    public static int numberOfDigits(String string) {
         return Op.quitAll(string).length();
     }
 
-    public static boolean decimalsAreZero(String string) {
+    private static boolean decimalsAreZero(String string) {
         if (hasDecimals(string)) {
             int i = string.indexOf(".") + 1;
             boolean decimalsAreZero = true;

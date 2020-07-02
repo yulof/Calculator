@@ -1,7 +1,10 @@
 public class Display {
 
-    public static String showNumber (String number){
-        return Op.setSpacing(number, false);
+    public static String showNumber (String current, String number) {
+        if (Op.numberOfDigits(current) >= 16)
+            return current;
+
+        return Op.setSpacing(current.concat(number), false);
     }
 
     public static String showResult (double number) {

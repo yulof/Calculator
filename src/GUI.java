@@ -84,7 +84,7 @@ public class GUI extends JFrame {
 
     private void numberButtonAction(String num) {
         if (Op.stringToDouble(label.getText()) != 0)
-            label.setText(Op.addNumberToCurrent(label.getText(), num));
+            label.setText(Display.showNumber(label.getText(), num));
         else
             label.setText(num);
     }
