@@ -1,23 +1,65 @@
 import javax.swing.*;
 
-public class GUI extends JFrame{
-
-    private JPanel panel;
-
-    private JButton C, sign, percentage;
-    private JButton decimal, equal;
-    private JButton add, subtract, multiplication, division;
-    private JButton zero, one, two, three, four, five, six, seven, eight, nine;
-
-    private JLabel label;
+public class GUI extends JFrame {
 
     private double num1, num2;
     private char operation;
-    private boolean result;
+
+    private JPanel panel;
+    private JLabel label;
+    private JButton C, sign, percentage, decimal, equal, add, subtract, multiplication, division,
+                    zero, one, two, three, four, five, six, seven, eight, nine;
 
     private GUI() {
         super("Calculadora");
         setContentPane(panel);
+
+        C.addActionListener(e -> {
+            label.setText("0");
+            num1 = 0; num2 = 0;
+            operation = ' ';
+        });
+
+        sign.addActionListener(e -> {
+            if (!label.getText().equals("0"))
+                if (label.getText().charAt(0) != '-')
+                    label.setText("-" + label.getText());
+                else
+                    label.setText(label.getText().replace("-", ""));
+        });
+
+        percentage.addActionListener(e -> label.setText(Display.showResult(Op.stringToDouble(label.getText()) / 100)));
+
+        division.addActionListener(e -> operationButtonAction('/'));
+
+        multiplication.addActionListener(e -> operationButtonAction('*'));
+
+        subtract.addActionListener(e -> operationButtonAction('-'));
+
+        add.addActionListener(e -> operationButtonAction('+'));
+
+        equal.addActionListener(e -> {
+            num2 = Op.stringToDouble(label.getText());
+
+            switch (operation){
+                case '+': label.setText(Display.showResult(num1 + num2)); break;
+                case '-': label.setText(Display.showResult(num1 - num2)); break;
+                case '*': label.setText(Display.showResult(num1 * num2)); break;
+                case '/':
+                    if (num2 != 0)
+                        label.setText(Display.showResult(num1 / num2));
+                    else
+                        label.setText("Error");
+                    break;
+            }
+
+            operation = ' ';
+        });
+
+        decimal.addActionListener(e -> {
+            if (!label.getText().contains("."))
+                label.setText(label.getText() + '.');
+        });
 
         zero.addActionListener(e -> numberButtonAction("0"));
 
@@ -38,91 +80,19 @@ public class GUI extends JFrame{
         eight.addActionListener(e -> numberButtonAction("8"));
 
         nine.addActionListener(e -> numberButtonAction("9"));
-
-        C.addActionListener(e -> {
-            label.setText("0");
-            result = false;
-        });
-
-        add.addActionListener(e -> operationButtonAction('+'));
-
-        subtract.addActionListener(e -> operationButtonAction('-'));
-
-        multiplication.addActionListener(e -> operationButtonAction('*'));
-
-        division.addActionListener(e -> operationButtonAction('/'));
-
-        sign.addActionListener(e -> {
-            if (!label.getText().equals("0"))
-                if (label.getText().charAt(0) != '-')
-                    label.setText("-" + label.getText());
-                else
-                    label.setText(label.getText().replace("-", ""));
-        });
-
-        decimal.addActionListener(e -> {
-            if (!label.getText().contains("."))
-                label.setText(label.getText() + '.');
-        });
-
-        percentage.addActionListener(e -> label.setText(String.valueOf(Double.parseDouble(label.getText())/100)));
-
-        equal.addActionListener(e -> {
-            num2 = Double.parseDouble(label.getText());
-
-            if (operation == '+')
-                label.setText(result(num1+num2));
-
-            if (operation == '-')
-                label.setText(result(num1-num2));
-
-            if (operation == '*')
-                label.setText(result(num1*num2));
-
-            if (operation == '/')
-                if(num2!=0)
-                    label.setText(result(num1/num2));
-                else
-                    label.setText("Error");
-
-            operation = ' ';
-            result = true;
-        });
-
     }
 
-    private void numberButtonAction(String num){
-        if(!label.getText().equals("0"))
-            label.setText(addNumber(label.getText(), num));
+    private void numberButtonAction(String num) {
+        if (Op.stringToDouble(label.getText()) != 0)
+            label.setText(Op.addNumberToCurrent(label.getText(), num));
         else
             label.setText(num);
     }
 
-    private String addNumber (String string, String number){
-        if (string.length() >= 16)
-            return string;
-
-        if (result){
-            result = false;
-            return number;
-        } else
-            return string + number;
-    }
-
-    private void operationButtonAction(char operation){
-        num1 = Float.parseFloat(label.getText());
+    private void operationButtonAction(char operation) {
+        num1 = Op.stringToDouble(Op.quitSpacing(label.getText()));
         this.operation = operation;
         label.setText("0");
-    }
-
-    private String result(double number){
-        if (number % 1 == 0)
-            if (String.valueOf(number).length() > 16)
-                return String.valueOf(number);
-            else
-                return String.valueOf((long) number);
-        else
-            return String.valueOf(number);
     }
 
     public static void view() {
