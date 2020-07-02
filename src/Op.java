@@ -20,6 +20,9 @@ public class Op {
     public static String setSpacing(String number, boolean result) {
         String string = quitSpacing(number);
 
+        if (string.contains("-"))
+            return "-" + setSpacing(number.substring(1), result);
+
         if (hasDecimals(string))
             if (decimalsAreZero(string) && result)
                 string = longToString((long) stringToDouble(number));
