@@ -10,19 +10,6 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="9591f" class="javax.swing.JButton" binding="sign">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="60"/>
-          </grid>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="0"/>
-          <label value="+/-"/>
-          <text value="+/-"/>
-          <verticalTextPosition value="0"/>
-        </properties>
-      </component>
       <component id="34479" class="javax.swing.JButton" binding="percentage">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -160,19 +147,6 @@
           <verticalTextPosition value="0"/>
         </properties>
       </component>
-      <component id="3ea31" class="javax.swing.JButton" binding="decimal">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="60"/>
-          </grid>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="0"/>
-          <label value="."/>
-          <text value="."/>
-          <verticalTextPosition value="0"/>
-        </properties>
-      </component>
       <component id="78467" class="javax.swing.JButton" binding="C">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
@@ -224,36 +198,11 @@
           <verticalTextPosition value="0"/>
         </properties>
       </component>
-      <component id="4fd4f" class="javax.swing.JButton" binding="zero">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="100" height="60"/>
-          </grid>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="0"/>
-          <text value="0"/>
-          <verticalTextPosition value="0"/>
-        </properties>
-      </component>
       <vspacer id="d53f9">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="14b76" class="javax.swing.JButton" binding="equal">
-        <constraints>
-          <grid row="5" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="152" height="60"/>
-          </grid>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="0"/>
-          <label value="="/>
-          <text value="="/>
-          <verticalTextPosition value="0"/>
-        </properties>
-      </component>
       <component id="c790c" class="javax.swing.JLabel" binding="label">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
@@ -263,6 +212,70 @@
           <font size="26"/>
           <foreground color="-16777216"/>
           <text value="0"/>
+        </properties>
+      </component>
+      <component id="d45b6" class="javax.swing.JButton" binding="equal">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <label value="="/>
+          <text value="="/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
+      <component id="3ea31" class="javax.swing.JButton" binding="decimal">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <label value="."/>
+          <text value="."/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
+      <component id="4fd4f" class="javax.swing.JButton" binding="zero">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <text value="0"/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
+      <component id="9591f" class="javax.swing.JButton" binding="sign">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <label value="+/-"/>
+          <text value="+/-"/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
+      <component id="7f41b" class="javax.swing.JButton" binding="back">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="100" height="60"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <label value="&lt;-"/>
+          <text value="&lt;-"/>
+          <verticalTextPosition value="0"/>
         </properties>
       </component>
     </children>
