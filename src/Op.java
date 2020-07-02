@@ -23,7 +23,7 @@ public class Op {
             if (decimalsAreZero(string) && result)
                 string = longToString((long) stringToDouble(number));
             else if (!decimalsAreZero(string) && result)
-                return setSpacingDecimals(string, string.length() % 3);
+                return setSpacingDecimals(string, sizeOfIntegerPart(string) % 3);
             else
                 return number;
 
@@ -73,6 +73,10 @@ public class Op {
 
     public static int numberOfDigits(String string) {
         return Op.quitAll(string).length();
+    }
+
+    private static int sizeOfIntegerPart(String string){
+        return string.indexOf(".");
     }
 
     private static boolean decimalsAreZero(String string) {
