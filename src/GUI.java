@@ -41,18 +41,7 @@ public class GUI extends JFrame {
         equal.addActionListener(e -> {
             num2 = Op.stringToDouble(label.getText());
 
-            switch (operation){
-                case '+': label.setText(Display.showResult(num1 + num2)); break;
-                case '-': label.setText(Display.showResult(num1 - num2)); break;
-                case '*': label.setText(Display.showResult(num1 * num2)); break;
-                case '/':
-                    if (num2 != 0)
-                        label.setText(Display.showResult(num1 / num2));
-                    else
-                        label.setText("Error");
-                    break;
-            }
-
+            label.setText(Op.resultOfOperation(num1, num2, operation));
             operation = ' ';
         });
 
