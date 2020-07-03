@@ -17,7 +17,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="16"/>
           <horizontalAlignment value="0"/>
           <label value="%"/>
           <text value="%"/>
@@ -31,7 +33,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <label value="/"/>
           <text value="/"/>
@@ -45,7 +49,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="8"/>
           <verticalTextPosition value="0"/>
@@ -58,7 +64,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="9"/>
           <verticalTextPosition value="0"/>
@@ -71,10 +79,12 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
-          <label value="X"/>
-          <text value="X"/>
+          <label value="x"/>
+          <text value="x"/>
           <verticalTextPosition value="0"/>
         </properties>
       </component>
@@ -85,7 +95,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <label value="-"/>
           <text value="-"/>
@@ -99,7 +111,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="6"/>
           <verticalTextPosition value="0"/>
@@ -112,7 +126,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="5"/>
           <verticalTextPosition value="0"/>
@@ -125,7 +141,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="2"/>
           <verticalTextPosition value="0"/>
@@ -138,7 +156,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="3"/>
           <verticalTextPosition value="0"/>
@@ -151,7 +171,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <label value="+"/>
           <text value="+"/>
@@ -168,6 +190,7 @@
           <background color="-3390916"/>
           <borderPainted value="true"/>
           <focusable value="false"/>
+          <font size="16"/>
           <horizontalAlignment value="0"/>
           <label value="C"/>
           <text value="C"/>
@@ -181,7 +204,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="7"/>
           <verticalTextPosition value="0"/>
@@ -194,7 +219,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="4"/>
           <verticalTextPosition value="0"/>
@@ -207,7 +234,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="1"/>
           <verticalTextPosition value="0"/>
@@ -236,7 +265,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-14562439"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <label value="="/>
           <text value="="/>
@@ -250,7 +281,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <label value="."/>
           <text value="."/>
@@ -264,7 +297,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-2"/>
           <focusable value="false"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <text value="0"/>
           <verticalTextPosition value="0"/>
@@ -277,7 +312,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-8143925"/>
           <focusable value="false"/>
+          <font size="16"/>
           <horizontalAlignment value="0"/>
           <label value="+/-"/>
           <text value="+/-"/>
@@ -291,7 +328,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-3375559"/>
           <focusable value="false"/>
+          <font size="16"/>
           <horizontalAlignment value="0"/>
           <label value="&lt;-"/>
           <text value="&lt;-"/>
