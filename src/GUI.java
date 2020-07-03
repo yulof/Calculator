@@ -75,10 +75,13 @@ public class GUI extends JFrame {
     }
 
     private void numberButtonAction(String num) {
-        if (Op.stringToDouble(label.getText()) != 0)
-            label.setText(Display.showNumber(label.getText(), num));
+        if (label.getText().equals("0."))
+            label.setText(label.getText() + num);
         else
-            label.setText(num);
+            if (Op.stringToDouble(label.getText()) != 0)
+                label.setText(Display.showNumber(label.getText(), num));
+            else
+                label.setText(num);
     }
 
     private void operationButtonAction(char operation) {
