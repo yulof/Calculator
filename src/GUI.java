@@ -24,13 +24,33 @@ public class GUI extends JFrame {
 
         percentage.addActionListener(e -> label.setText(Display.showResult(Op.stringToDouble(label.getText()) / 100)));
 
-        division.addActionListener(e -> operationButtonAction('/'));
+        division.addActionListener(e -> {
+            if (operation != ' ')
+                equal.doClick();
 
-        multiplication.addActionListener(e -> operationButtonAction('*'));
+            operationButtonAction('/');
+        });
 
-        subtract.addActionListener(e -> operationButtonAction('-'));
+        multiplication.addActionListener(e -> {
+                if (operation != ' ')
+                    equal.doClick();
 
-        add.addActionListener(e -> operationButtonAction('+'));
+                operationButtonAction('*');
+        });
+
+        subtract.addActionListener(e -> {
+            if (operation != ' ')
+                equal.doClick();
+
+            operationButtonAction('-');
+        });
+
+        add.addActionListener(e -> {
+            if (operation != ' ')
+                equal.doClick();
+
+            operationButtonAction('+');
+        });
 
         sign.addActionListener(e -> {
             if (!label.getText().equals("0"))
