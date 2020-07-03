@@ -21,13 +21,7 @@ public class GUI extends JFrame {
             operation = ' ';
         });
 
-        sign.addActionListener(e -> {
-            if (!label.getText().equals("0"))
-                if (label.getText().charAt(0) != '-')
-                    label.setText("-" + label.getText());
-                else
-                    label.setText(label.getText().replace("-", ""));
-        });
+        back.addActionListener(e -> label.setText(Display.previousNumber(label.getText())));
 
         percentage.addActionListener(e -> label.setText(Display.showResult(Op.stringToDouble(label.getText()) / 100)));
 
@@ -39,16 +33,24 @@ public class GUI extends JFrame {
 
         add.addActionListener(e -> operationButtonAction('+'));
 
-        equal.addActionListener(e -> {
-            num2 = Op.stringToDouble(label.getText());
-
-            label.setText(Op.resultOfOperation(num1, num2, operation));
-            operation = ' ';
+        sign.addActionListener(e -> {
+            if (!label.getText().equals("0"))
+                if (label.getText().charAt(0) != '-')
+                    label.setText("-" + label.getText());
+                else
+                    label.setText(label.getText().replace("-", ""));
         });
 
         decimal.addActionListener(e -> {
             if (!label.getText().contains("."))
                 label.setText(label.getText() + '.');
+        });
+
+        equal.addActionListener(e -> {
+            num2 = Op.stringToDouble(label.getText());
+
+            label.setText(Op.resultOfOperation(num1, num2, operation));
+            operation = ' ';
         });
 
         zero.addActionListener(e -> numberButtonAction("0"));

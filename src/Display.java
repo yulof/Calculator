@@ -14,4 +14,13 @@ public class Display {
         return Op.setSpacing(String.valueOf(number), true);
     }
 
+    public static String previousNumber (String number){
+        String result = Op.setSpacing(number.substring(0, number.length()-1), false);
+
+        if(result.equals("") || result.equals("-"))
+            return "0";
+        else
+            return result;
+    }
+
 }
