@@ -3,7 +3,7 @@ import javax.swing.*;
 public class GUI extends JFrame {
 
     private double num1, num2;
-    private char operation;
+    private char operation = ' ';
 
     private JPanel panel;
     private JLabel label;
@@ -46,10 +46,12 @@ public class GUI extends JFrame {
         });
 
         equal.addActionListener(e -> {
-            num2 = Op.stringToDouble(label.getText());
+            if (operation != ' '){
+                num2 = Op.stringToDouble(label.getText());
 
-            label.setText(Op.resultOfOperation(num1, num2, operation));
-            operation = ' ';
+                label.setText(Op.resultOfOperation(num1, num2, operation));
+                operation = ' ';
+            }
         });
 
         zero.addActionListener(e -> numberButtonAction("0"));
