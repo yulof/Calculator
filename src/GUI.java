@@ -8,8 +8,7 @@ public class GUI extends JFrame {
     private JPanel panel;
     private JLabel label;
     private JButton C, sign, percentage, decimal, equal, add, subtract, multiplication, division,
-                    zero, one, two, three, four, five, six, seven, eight, nine;
-    private JButton back;
+                    zero, one, two, three, four, five, six, seven, eight, nine, back;
 
     private GUI() {
         super("Calculadora");

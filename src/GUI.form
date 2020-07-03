@@ -17,6 +17,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="%"/>
           <text value="%"/>
@@ -30,6 +31,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="/"/>
           <text value="/"/>
@@ -43,6 +45,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="8"/>
           <verticalTextPosition value="0"/>
@@ -55,6 +58,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="9"/>
           <verticalTextPosition value="0"/>
@@ -67,6 +71,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="X"/>
           <text value="X"/>
@@ -80,6 +85,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="-"/>
           <text value="-"/>
@@ -93,6 +99,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="6"/>
           <verticalTextPosition value="0"/>
@@ -105,6 +112,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="5"/>
           <verticalTextPosition value="0"/>
@@ -117,6 +125,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="2"/>
           <verticalTextPosition value="0"/>
@@ -129,6 +138,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="3"/>
           <verticalTextPosition value="0"/>
@@ -141,6 +151,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="+"/>
           <text value="+"/>
@@ -156,6 +167,7 @@
         <properties>
           <background color="-3390916"/>
           <borderPainted value="true"/>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="C"/>
           <text value="C"/>
@@ -169,6 +181,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="7"/>
           <verticalTextPosition value="0"/>
@@ -181,6 +194,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="4"/>
           <verticalTextPosition value="0"/>
@@ -193,6 +207,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="1"/>
           <verticalTextPosition value="0"/>
@@ -221,6 +236,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="="/>
           <text value="="/>
@@ -234,6 +250,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="."/>
           <text value="."/>
@@ -247,6 +264,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <text value="0"/>
           <verticalTextPosition value="0"/>
@@ -259,6 +277,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="+/-"/>
           <text value="+/-"/>
@@ -272,6 +291,7 @@
           </grid>
         </constraints>
         <properties>
+          <focusable value="false"/>
           <horizontalAlignment value="0"/>
           <label value="&lt;-"/>
           <text value="&lt;-"/>
