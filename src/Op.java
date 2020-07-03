@@ -19,6 +19,9 @@ public class Op {
         if (string.equals(""))
             return 0;
 
+        if (string.charAt(string.length() - 1) == 'E')
+            return Double.parseDouble(quitSpacing(string.concat("1")));
+
         return Double.parseDouble(quitSpacing(string));
     }
 
