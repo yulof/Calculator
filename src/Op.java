@@ -115,4 +115,23 @@ public class Op {
         return string.contains(".");
     }
 
+    public static boolean isZero (String string){
+        String number = Op.quitSpacing(string);
+
+        if (!number.contains(".") && !number.equals("0"))
+            return false;
+
+        boolean isZero = true;
+        int i = 0;
+
+        while (number.charAt(i) != '.' && isZero){
+            if (number.charAt(i) != '0')
+                isZero = false;
+
+            i++;
+        }
+
+        return isZero;
+    }
+
 }
