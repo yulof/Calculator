@@ -15,12 +15,14 @@ public class Display {
     }
 
     public static String previousNumber (String number){
-        String result = Op.setSpacing(number.substring(0, number.length()-1), false);
+        if (number.contains("E"))
+            return number.substring(0, number.indexOf("E"));
 
+        String result = Op.setSpacing(number.substring(0, number.length()-1), false);
         if(result.equals("") || result.equals("-"))
             return "0";
-        else
-            return result;
+
+        return result;
     }
 
 }

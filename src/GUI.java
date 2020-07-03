@@ -108,7 +108,7 @@ public class GUI extends JFrame {
     }
 
     private void operationButtonAction(char operation) {
-        num1 = Op.stringToDouble(Op.quitSpacing(label.getText()));
+        num1 = Op.stringToDouble(label.getText());
         this.operation = operation;
         label.setText("0");
     }
