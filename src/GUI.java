@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class GUI extends JFrame {
 
@@ -7,7 +6,7 @@ public class GUI extends JFrame {
     private char operation = ' ';
 
     private JPanel panel;
-    private JLabel label;
+    private JLabel label, miniLabel;
     private JButton C, sign, percentage, decimal, equal, add, subtract, multiplication, division,
             zero, one, two, three, four, five, six, seven, eight, nine, back;
 
