@@ -346,7 +346,7 @@
           <background color="-1"/>
           <font name="Segoe UI" size="12" style="0"/>
           <foreground color="-16777216"/>
-          <text value="Label"/>
+          <text value=" "/>
         </properties>
       </component>
     </children>

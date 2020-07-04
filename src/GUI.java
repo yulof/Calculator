@@ -17,6 +17,7 @@ public class GUI extends JFrame {
 
         C.addActionListener(e -> {
             label.setText("0");
+            miniLabel.setText(" ");
             num1 = 0;
             num2 = 0;
             operation = ' ';
@@ -82,6 +83,7 @@ public class GUI extends JFrame {
             if (operation != ' ') {
                 num2 = Utilities.stringToDouble(label.getText());
 
+                miniLabel.setText(miniLabel.getText() + label.getText() + " =");
                 label.setText(Display.resultOfOperation(num1, num2, operation));
                 operation = ' ';
                 label.setFont(Display.font(label.getText()));
@@ -121,6 +123,7 @@ public class GUI extends JFrame {
     private void operationButtonAction(char operation) {
         num1 = Utilities.stringToDouble(label.getText());
         this.operation = operation;
+        miniLabel.setText(label.getText() + " " + operation + " ");
         label.setText("0");
         label.setFont(Display.font(label.getText()));
     }
