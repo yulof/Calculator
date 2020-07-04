@@ -15,6 +15,9 @@ public class Display {
     }
 
     public static String previousNumber(String number) {
+        if (number.equals("Error"))
+            return "0";
+
         if (number.contains("E"))
             return number.substring(0, number.indexOf("E"));
 
