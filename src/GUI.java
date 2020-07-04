@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class GUI extends JFrame {
 
@@ -13,17 +14,25 @@ public class GUI extends JFrame {
     private GUI() {
         super("Calculadora");
         setContentPane(panel);
+        label.setFont(Display.font(label.getText()));
 
         C.addActionListener(e -> {
             label.setText("0");
             num1 = 0;
             num2 = 0;
             operation = ' ';
+            label.setFont(Display.font(label.getText()));
         });
 
-        back.addActionListener(e -> label.setText(Display.previousNumber(label.getText())));
+        back.addActionListener(e -> {
+            label.setText(Display.previousNumber(label.getText()));
+            label.setFont(Display.font(label.getText()));
+        });
 
-        percentage.addActionListener(e -> label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100)));
+        percentage.addActionListener(e -> {
+            label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100));
+            label.setFont(Display.font(label.getText()));
+        });
 
         division.addActionListener(e -> {
             if (operation != ' ')
@@ -59,11 +68,15 @@ public class GUI extends JFrame {
                     label.setText("-" + label.getText());
                 else
                     label.setText(label.getText().replace("-", ""));
+
+            label.setFont(Display.font(label.getText()));
         });
 
         decimal.addActionListener(e -> {
             if (!label.getText().contains("."))
                 label.setText(label.getText() + '.');
+
+            label.setFont(Display.font(label.getText()));
         });
 
         equal.addActionListener(e -> {
@@ -72,6 +85,7 @@ public class GUI extends JFrame {
 
                 label.setText(Display.resultOfOperation(num1, num2, operation));
                 operation = ' ';
+                label.setFont(Display.font(label.getText()));
             }
         });
 
@@ -99,18 +113,17 @@ public class GUI extends JFrame {
     private void numberButtonAction(String num) {
         if (label.getText().equals("0"))
             label.setText(num);
-        else {
-            if (Utilities.isZero(label.getText()))
-                label.setText(label.getText() + num);
-            else
-                label.setText(Display.addNumber(label.getText(), num));
-        }
+        else
+            label.setText(Display.addNumber(label.getText(), num));
+
+        label.setFont(Display.font(label.getText()));
     }
 
     private void operationButtonAction(char operation) {
         num1 = Utilities.stringToDouble(label.getText());
         this.operation = operation;
         label.setText("0");
+        label.setFont(Display.font(label.getText()));
     }
 
     public static void view() {

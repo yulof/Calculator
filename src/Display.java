@@ -1,8 +1,13 @@
+import java.awt.*;
+
 public class Display {
 
     public static String addNumber(String current, String number) {
         if (Utilities.realSize(current) >= 16 || current.equals("Error"))
             return current;
+
+        if (Utilities.isZero(current))
+            return current + number;
 
         return Spacing.set(current.concat(number), false);
     }
@@ -41,6 +46,16 @@ public class Display {
             default:
                 return "Error";
         }
+    }
+
+    public static Font font(String string){
+        if (Utilities.realSize(string) >= 16)
+            return new Font("Segoe UI", Font.BOLD, 26);
+
+        if (Utilities.realSize(string) >= 12)
+            return new Font("Segoe UI", Font.BOLD, 28);
+
+        return new Font("Segoe UI", Font.BOLD, 36);
     }
 
 }
