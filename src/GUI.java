@@ -8,7 +8,7 @@ public class GUI extends JFrame {
     private JPanel panel;
     private JLabel label;
     private JButton C, sign, percentage, decimal, equal, add, subtract, multiplication, division,
-                    zero, one, two, three, four, five, six, seven, eight, nine, back;
+            zero, one, two, three, four, five, six, seven, eight, nine, back;
 
     private GUI() {
         super("Calculadora");
@@ -16,13 +16,14 @@ public class GUI extends JFrame {
 
         C.addActionListener(e -> {
             label.setText("0");
-            num1 = 0; num2 = 0;
+            num1 = 0;
+            num2 = 0;
             operation = ' ';
         });
 
         back.addActionListener(e -> label.setText(Display.previousNumber(label.getText())));
 
-        percentage.addActionListener(e -> label.setText(Display.showResult(Op.stringToDouble(label.getText()) / 100)));
+        percentage.addActionListener(e -> label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100)));
 
         division.addActionListener(e -> {
             if (operation != ' ')
@@ -32,10 +33,10 @@ public class GUI extends JFrame {
         });
 
         multiplication.addActionListener(e -> {
-                if (operation != ' ')
-                    equal.doClick();
+            if (operation != ' ')
+                equal.doClick();
 
-                operationButtonAction('*');
+            operationButtonAction('*');
         });
 
         subtract.addActionListener(e -> {
@@ -66,10 +67,10 @@ public class GUI extends JFrame {
         });
 
         equal.addActionListener(e -> {
-            if (operation != ' '){
-                num2 = Op.stringToDouble(label.getText());
+            if (operation != ' ') {
+                num2 = Utilities.stringToDouble(label.getText());
 
-                label.setText(Op.resultOfOperation(num1, num2, operation));
+                label.setText(Display.resultOfOperation(num1, num2, operation));
                 operation = ' ';
             }
         });
@@ -98,17 +99,16 @@ public class GUI extends JFrame {
     private void numberButtonAction(String num) {
         if (label.getText().equals("0"))
             label.setText(num);
-        else{
-            if (Op.isZero(label.getText()))
+        else {
+            if (Utilities.isZero(label.getText()))
                 label.setText(label.getText() + num);
             else
-                label.setText(Display.showNumber(label.getText(), num));
+                label.setText(Display.addNumber(label.getText(), num));
         }
-
     }
 
     private void operationButtonAction(char operation) {
-        num1 = Op.stringToDouble(label.getText());
+        num1 = Utilities.stringToDouble(label.getText());
         this.operation = operation;
         label.setText("0");
     }
