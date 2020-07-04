@@ -49,13 +49,13 @@ public class Display {
     }
 
     public static Font font(String string){
-        if (Utilities.realSize(string) >= 16)
-            return new Font("Segoe UI", Font.BOLD, 26);
+        if (string.length() >= 20)
+            return new Font("Segoe UI", Font.PLAIN, 26);
 
-        if (Utilities.realSize(string) >= 12)
-            return new Font("Segoe UI", Font.BOLD, 28);
+        if (string.length() >= 16)
+            return new Font("Segoe UI", Font.PLAIN, 30);
 
-        return new Font("Segoe UI", Font.BOLD, 36);
+        return new Font("Segoe UI", Font.PLAIN, 36);
     }
 
 }
