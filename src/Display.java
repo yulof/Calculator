@@ -1,7 +1,7 @@
 public class Display {
 
     public static String addNumber(String current, String number) {
-        if (Utilities.realSize(current) >= 16)
+        if (Utilities.realSize(current) >= 16 || current.equals("Error"))
             return current;
 
         return Spacing.set(current.concat(number), false);
