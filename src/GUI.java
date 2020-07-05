@@ -25,6 +25,8 @@ public class GUI extends JFrame {
         });
 
         back.addActionListener(e -> {
+            if (this.operation == ' ')
+                miniLabel.setText(" ");
             label.setText(Display.previousNumber(label.getText()));
             label.setFont(Display.font(label.getText()));
         });
@@ -63,7 +65,7 @@ public class GUI extends JFrame {
         });
 
         sign.addActionListener(e -> {
-            if (!label.getText().equals("0") && !label.getText().equals("Error")) {
+            if (!label.getText().equals("0") && !label.getText().equals("Error") && !Utilities.isZero(label.getText())) {
                 if (label.getText().charAt(0) != '-')
                     label.setText("-" + label.getText());
                 else

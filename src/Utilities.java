@@ -46,15 +46,14 @@ public class Utilities {
     }
 
     public static boolean isZero(String string) {
-        String number = Spacing.quit(string);
-
-        if (!number.contains(".") && !number.equals("0"))
+        if (string.equals(""))
             return false;
 
+        String number = Spacing.quitAll(string);
         boolean isZero = true;
 
         int i = 0;
-        while (number.charAt(i) != '.' && isZero) {
+        while (i < number.length() && isZero) {
             if (number.charAt(i) != '0')
                 isZero = false;
 

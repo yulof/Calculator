@@ -30,6 +30,10 @@ public class Display {
             return number.substring(0, number.indexOf("E"));
 
         String previous = Spacing.set(number.substring(0, number.length() - 1), false);
+
+        if (previous.contains("-") && Utilities.isZero(previous.substring(1)))
+            return previous.substring(1);
+
         if (previous.equals("") || previous.equals("-"))
             return "0";
 
