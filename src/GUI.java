@@ -83,10 +83,10 @@ public class GUI extends JFrame {
         equal.addActionListener(e -> {
             if (operation != ' ') {
                 num2 = Utilities.stringToDouble(label.getText());
-                operation = ' ';
 
                 miniLabel.setText(miniLabel.getText() + label.getText() + " =");
                 label.setText(Display.resultOfOperation(num1, num2, operation));
+                operation = ' ';
                 label.setFont(Display.font(label.getText()));
             }
         });
