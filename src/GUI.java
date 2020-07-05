@@ -69,7 +69,7 @@ public class GUI extends JFrame {
                 if (label.getText().charAt(0) != '-')
                     label.setText("-" + label.getText());
                 else
-                    label.setText(label.getText().replace("-", ""));
+                    label.setText(label.getText().replaceFirst("-", ""));
 
                 label.setFont(Display.font(label.getText()));
             }
