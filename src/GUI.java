@@ -63,7 +63,7 @@ public class GUI extends JFrame {
         });
 
         sign.addActionListener(e -> {
-            if (!label.getText().equals("0")) {
+            if (!label.getText().equals("0") && !label.getText().equals("Error")) {
                 if (label.getText().charAt(0) != '-')
                     label.setText("-" + label.getText());
                 else
@@ -74,7 +74,7 @@ public class GUI extends JFrame {
         });
 
         decimal.addActionListener(e -> {
-            if (!label.getText().contains(".")) {
+            if (!label.getText().contains(".") && !label.getText().equals("Error")) {
                 label.setText(label.getText() + '.');
                 label.setFont(Display.font(label.getText()));
             }
@@ -118,12 +118,14 @@ public class GUI extends JFrame {
     }
 
     private void operationButtonAction(char operation) {
-        num1 = Utilities.stringToDouble(label.getText());
-        this.operation = operation;
+        if (!label.getText().equals("Error")){
+            num1 = Utilities.stringToDouble(label.getText());
+            this.operation = operation;
 
-        miniLabel.setText(label.getText() + " " + operation + " ");
-        label.setText("0");
-        label.setFont(Display.font(label.getText()));
+            miniLabel.setText(label.getText() + " " + operation + " ");
+            label.setText("0");
+            label.setFont(Display.font(label.getText()));
+        }
     }
 
     public static void view() {
