@@ -9,6 +9,9 @@ public class Display {
         if (Utilities.realSize(current) >= 16 || current.equals("Error"))
             return current;
 
+        if (Utilities.isExponential(Utilities.stringToDouble(current)))
+            return current + number;
+
         if (Utilities.isZero(current))
             return current + number;
 

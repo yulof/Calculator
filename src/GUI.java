@@ -117,6 +117,8 @@ public class GUI extends JFrame {
     }
 
     private void numberButtonAction(String num) {
+        if (this.operation == ' ')
+            miniLabel.setText(" ");
         label.setText(Display.addNumber(label.getText(), num));
         label.setFont(Display.font(label.getText()));
     }
