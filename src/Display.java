@@ -3,6 +3,9 @@ import java.awt.*;
 public class Display {
 
     public static String addNumber(String current, String number) {
+        if (current.equals("0"))
+            return number;
+
         if (Utilities.realSize(current) >= 16 || current.equals("Error"))
             return current;
 

@@ -63,29 +63,30 @@ public class GUI extends JFrame {
         });
 
         sign.addActionListener(e -> {
-            if (!label.getText().equals("0"))
+            if (!label.getText().equals("0")) {
                 if (label.getText().charAt(0) != '-')
                     label.setText("-" + label.getText());
                 else
                     label.setText(label.getText().replace("-", ""));
 
-            label.setFont(Display.font(label.getText()));
+                label.setFont(Display.font(label.getText()));
+            }
         });
 
         decimal.addActionListener(e -> {
-            if (!label.getText().contains("."))
+            if (!label.getText().contains(".")) {
                 label.setText(label.getText() + '.');
-
-            label.setFont(Display.font(label.getText()));
+                label.setFont(Display.font(label.getText()));
+            }
         });
 
         equal.addActionListener(e -> {
             if (operation != ' ') {
                 num2 = Utilities.stringToDouble(label.getText());
+                operation = ' ';
 
                 miniLabel.setText(miniLabel.getText() + label.getText() + " =");
                 label.setText(Display.resultOfOperation(num1, num2, operation));
-                operation = ' ';
                 label.setFont(Display.font(label.getText()));
             }
         });
@@ -112,17 +113,14 @@ public class GUI extends JFrame {
     }
 
     private void numberButtonAction(String num) {
-        if (label.getText().equals("0"))
-            label.setText(num);
-        else
-            label.setText(Display.addNumber(label.getText(), num));
-
+        label.setText(Display.addNumber(label.getText(), num));
         label.setFont(Display.font(label.getText()));
     }
 
     private void operationButtonAction(char operation) {
         num1 = Utilities.stringToDouble(label.getText());
         this.operation = operation;
+
         miniLabel.setText(label.getText() + " " + operation + " ");
         label.setText("0");
         label.setFont(Display.font(label.getText()));
