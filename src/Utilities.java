@@ -1,9 +1,6 @@
 public class Utilities {
 
     public static double stringToDouble(String string) {
-        if (string.equals("Error"))
-            return 0;
-
         return Double.parseDouble(Spacing.quit(string));
     }
 

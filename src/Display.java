@@ -6,11 +6,8 @@ public class Display {
         if (current.equals("0"))
             return number;
 
-        if (Utilities.realSize(current) >= 16 || current.equals("Error"))
+        if (Utilities.realSize(current) >= 16 || current.equals("Error") || Utilities.isExponential(Utilities.stringToDouble(current)))
             return current;
-
-        if (Utilities.isExponential(Utilities.stringToDouble(current)))
-            return current + number;
 
         if (Utilities.isZero(current))
             return current + number;
