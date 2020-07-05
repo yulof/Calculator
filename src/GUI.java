@@ -32,8 +32,10 @@ public class GUI extends JFrame {
         });
 
         percentage.addActionListener(e -> {
-            label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100));
-            label.setFont(Display.font(label.getText()));
+            if (!label.getText().equals("Error")) {
+                label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100));
+                label.setFont(Display.font(label.getText()));
+            }
         });
 
         division.addActionListener(e -> {
@@ -120,7 +122,7 @@ public class GUI extends JFrame {
     }
 
     private void operationButtonAction(char operation) {
-        if (!label.getText().equals("Error")){
+        if (!label.getText().equals("Error")) {
             num1 = Utilities.stringToDouble(label.getText());
             this.operation = operation;
 
