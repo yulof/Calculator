@@ -16,6 +16,10 @@ public class Utilities {
         return String.valueOf(number).contains("E");
     }
 
+    public static boolean isExponential(String number) {
+        return number.contains("E");
+    }
+
     public static int realSize(String string) {
         return Spacing.quitAll(string).length();
     }
