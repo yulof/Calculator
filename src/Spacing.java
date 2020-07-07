@@ -6,18 +6,18 @@ public class Spacing {
 
         String string = quit(number);
 
-        if (!Utilities.hasDecimals(string))
+        if (!hasDecimals(string))
             return setSpacingIntegers(string, string.length() % 3);
 
-        if (Utilities.decimalsAreZero(string) && result) {
+        if (decimalsAreZero(string) && result) {
             return set(Utilities.longToString((long) Utilities.stringToDouble(number)), true);
         }
 
-        if (Utilities.decimalsAreZero(string) && !result) {
+        if (decimalsAreZero(string) && !result) {
             return number;
         }
 
-        return setSpacingDecimals(string, Utilities.sizeOfIntegerPart(string) % 3);
+        return setSpacingDecimals(string, sizeOfIntegerPart(string) % 3);
     }
 
     private static String setSpacingDecimals(String string, int r) {
@@ -53,6 +53,28 @@ public class Spacing {
 
     public static String quitAll(String string) {
         return quit(string).replace(".", "").replace("-", "");
+    }
+
+    private static boolean hasDecimals(String string) {
+        return string.contains(".");
+    }
+
+    private static boolean decimalsAreZero(String string) {
+        int i = string.indexOf(".") + 1;
+        boolean decimalsAreZero = true;
+
+        while (i < string.length() && decimalsAreZero) {
+            if (string.charAt(i) != '0')
+                decimalsAreZero = false;
+
+            i++;
+        }
+
+        return decimalsAreZero;
+    }
+
+    private static int sizeOfIntegerPart(String string) {
+        return string.indexOf(".");
     }
 
 }

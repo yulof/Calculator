@@ -16,20 +16,18 @@ public class GUI extends JFrame {
         label.setFont(Display.font(label.getText()));
 
         C.addActionListener(e -> {
-            label.setText("0");
+            setDisplay("0");
             miniLabel.setText(" ");
             num1 = 0;
             num2 = 0;
             operation = ' ';
-            label.setFont(Display.font(label.getText()));
         });
 
         back.addActionListener(e -> {
             if (isResult())
                 miniLabel.setText(" ");
 
-            label.setText(Display.previousNumber(label.getText()));
-            label.setFont(Display.font(label.getText()));
+            setDisplay(Display.previousNumber(label.getText()));
         });
 
         percentage.addActionListener(e -> {
@@ -37,8 +35,7 @@ public class GUI extends JFrame {
                 if (isResult())
                     miniLabel.setText(" ");
 
-                label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100));
-                label.setFont(Display.font(label.getText()));
+                setDisplay(Display.result(Utilities.stringToDouble(label.getText()) / 100));
             }
         });
 
@@ -76,11 +73,9 @@ public class GUI extends JFrame {
                     miniLabel.setText(" ");
 
                 if (label.getText().charAt(0) != '-')
-                    label.setText("-" + label.getText());
+                    setDisplay("-" + label.getText());
                 else
-                    label.setText(label.getText().replaceFirst("-", ""));
-
-                label.setFont(Display.font(label.getText()));
+                    setDisplay(label.getText().replaceFirst("-", ""));
             }
         });
 
@@ -89,8 +84,7 @@ public class GUI extends JFrame {
                 if (isResult())
                     miniLabel.setText(" ");
 
-                label.setText(label.getText() + '.');
-                label.setFont(Display.font(label.getText()));
+                setDisplay(label.getText() + '.');
             }
         });
 
@@ -99,9 +93,9 @@ public class GUI extends JFrame {
                 num2 = Utilities.stringToDouble(label.getText());
 
                 miniLabel.setText(miniLabel.getText() + label.getText() + " =");
-                label.setText(Display.resultOfOperation(num1, num2, operation));
+                setDisplay(Display.resultOfOperation(num1, num2, operation));
+
                 operation = ' ';
-                label.setFont(Display.font(label.getText()));
             }
         });
 
@@ -129,8 +123,8 @@ public class GUI extends JFrame {
     private void numberButtonAction(String num) {
         if (this.operation == ' ')
             miniLabel.setText(" ");
-        label.setText(Display.addNumber(label.getText(), num));
-        label.setFont(Display.font(label.getText()));
+
+        setDisplay(Display.addNumber(label.getText(), num));
     }
 
     private void operationButtonAction(char operation) {
@@ -139,9 +133,13 @@ public class GUI extends JFrame {
             this.operation = operation;
 
             miniLabel.setText(label.getText() + " " + operation + " ");
-            label.setText("0");
-            label.setFont(Display.font(label.getText()));
+            setDisplay("0");
         }
+    }
+
+    private void setDisplay(String number){
+        label.setText(number);
+        label.setFont(Display.font(label.getText()));
     }
 
     private boolean isResult() {

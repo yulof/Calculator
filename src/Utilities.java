@@ -12,40 +12,6 @@ public class Utilities {
         return String.valueOf(number);
     }
 
-    public static boolean isExponential(double number) {
-        return String.valueOf(number).contains("E");
-    }
-
-    public static boolean isExponential(String number) {
-        return number.contains("E");
-    }
-
-    public static int realSize(String string) {
-        return Spacing.quitAll(string).length();
-    }
-
-    public static int sizeOfIntegerPart(String string) {
-        return string.indexOf(".");
-    }
-
-    public static boolean decimalsAreZero(String string) {
-        int i = string.indexOf(".") + 1;
-        boolean decimalsAreZero = true;
-
-        while (i < string.length() && decimalsAreZero) {
-            if (string.charAt(i) != '0')
-                decimalsAreZero = false;
-
-            i++;
-        }
-
-        return decimalsAreZero;
-    }
-
-    public static boolean hasDecimals(String string) {
-        return string.contains(".");
-    }
-
     public static boolean isZero(String string) {
         if (string.equals(""))
             return false;

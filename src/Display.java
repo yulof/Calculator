@@ -6,7 +6,7 @@ public class Display {
         if (current.equals("0"))
             return number;
 
-        if (Utilities.realSize(current) >= 16 || current.equals("Error") || Utilities.isExponential(current))
+        if (realSize(current) >= 16 || current.equals("Error") || isExponential(current))
             return current;
 
         if (Utilities.isZero(current))
@@ -16,7 +16,7 @@ public class Display {
     }
 
     public static String result(double number) {
-        if (Utilities.isExponential(number))
+        if (isExponential(Utilities.doubleToString(number)))
             return Utilities.doubleToString(number);
 
         return Spacing.set(Utilities.doubleToString(number), true);
@@ -63,6 +63,14 @@ public class Display {
             return new Font("Segoe UI", Font.PLAIN, 30);
 
         return new Font("Segoe UI", Font.PLAIN, 36);
+    }
+
+    private static boolean isExponential(String number) {
+        return number.contains("E");
+    }
+
+    private static int realSize(String string) {
+        return Spacing.quitAll(string).length();
     }
 
 }
