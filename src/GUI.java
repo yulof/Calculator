@@ -25,14 +25,18 @@ public class GUI extends JFrame {
         });
 
         back.addActionListener(e -> {
-            if (this.operation == ' ')
+            if (isResult())
                 miniLabel.setText(" ");
+
             label.setText(Display.previousNumber(label.getText()));
             label.setFont(Display.font(label.getText()));
         });
 
         percentage.addActionListener(e -> {
             if (!label.getText().equals("Error")) {
+                if (isResult())
+                    miniLabel.setText(" ");
+
                 label.setText(Display.result(Utilities.stringToDouble(label.getText()) / 100));
                 label.setFont(Display.font(label.getText()));
             }
@@ -68,6 +72,9 @@ public class GUI extends JFrame {
 
         sign.addActionListener(e -> {
             if (!label.getText().equals("0") && !label.getText().equals("Error") && !Utilities.isZero(label.getText())) {
+                if (isResult())
+                    miniLabel.setText(" ");
+
                 if (label.getText().charAt(0) != '-')
                     label.setText("-" + label.getText());
                 else
@@ -79,6 +86,9 @@ public class GUI extends JFrame {
 
         decimal.addActionListener(e -> {
             if (!label.getText().contains(".") && !label.getText().equals("Error")) {
+                if (isResult())
+                    miniLabel.setText(" ");
+
                 label.setText(label.getText() + '.');
                 label.setFont(Display.font(label.getText()));
             }
@@ -132,6 +142,10 @@ public class GUI extends JFrame {
             label.setText("0");
             label.setFont(Display.font(label.getText()));
         }
+    }
+
+    private boolean isResult() {
+        return miniLabel.getText().contains("=");
     }
 
     public static void view() {
